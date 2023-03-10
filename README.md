@@ -8,4 +8,5 @@ StoryBoard is a place for writers to express themselves with help from AI.
 * Get personalized recommendation.
 
 ## Architecture
-![AWS architecture](AWS architecture.png?raw=true "Title")
+
+![AWS architecture](https://github.com/abhilad1009/StoryBoard/blob/main/AWS%20architecture.png?raw=true "Title")
