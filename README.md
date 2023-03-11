@@ -17,6 +17,6 @@ StoryBoard is a place for writers to express themselves with help from AI.
 
 ![AWS architecture](https://github.com/abhilad1009/StoryBoard/blob/main/AWS%20architecture.png?raw=true "Title")
 
-## API
+## API Specification
 
 The following swagger file defines the API specifications for this project: [Swagger YAML](https://github.com/abhilad1009/StoryBoard/blob/main/projectswagger1.0.yaml)
