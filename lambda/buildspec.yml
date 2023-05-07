@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - echo "Installing dependencies..."
+      - pip install -r requirements.txt -t libindex
+      - pip install -r requirements.txt -t libsearch
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - cd libindex
+      - zip -r9 ../deployment_index.zip .
+      - cd ..
+      - zip -g deployment_index.zip lambda_function_index.py
+      - cd libsearch
+      - zip -r9 ../deployment_search.zip .
+      - cd ..
+      - zip -g deployment_search.zip lambda_function_search.py
+  post_build:
+    commands:
+      - echo "Updating lambda Function..."
+      - aws lambda update-function-code --function-name lambda_function_index --zip-file fileb://deployment_index.zip 
+      - aws lambda update-function-code --function-name lambda_function_search --zip-file fileb://deployment_search.zip
+      - echo "DONE!!"
