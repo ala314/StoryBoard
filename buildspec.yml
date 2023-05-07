@@ -5,12 +5,12 @@ phases:
       python: 3.9
     commands:
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t uploadstory
-      - pip install -r requirements.txt -t getstory
-      - pip install -r requirements.txt -t getwrapped
-      - pip install -r requirements.txt -t imagegen
-      - pip install -r requirements.txt -t promptgen
-      - pip install -r requirements.txt -t updateprofile
+      - pip install -r requirementsuploadstory.txt -t uploadstory
+      - pip install -r requirementsgetstory.txt -t getstory
+      - pip install -r requierementsgetwrapped.txt -t getwrapped
+      - pip install -r requirementsimagegen.txt -t imagegen
+      - pip install -r requirementspromptimagegen.txt -t promptgen
+      - pip install -r requirementsupdateprofile.txt -t updateprofile
   build:
     commands:
       - echo "Zipping deployment package..."
