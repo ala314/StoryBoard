@@ -1,5 +1,5 @@
-boto3
+iboto3
 openai
 requests
-opensearch-py
 requests-aws4auth
+opensearch-py
