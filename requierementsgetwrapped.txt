@@ -1,0 +1,8 @@
+boto3
+# import requests
+# from botocore.vendored import requests
+from opensearchpy import OpenSearch, RequestsHttpConnection
+from requests_aws4auth import AWS4Auth
+import seaborn
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
