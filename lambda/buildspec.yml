@@ -5,22 +5,59 @@ phases:
       python: 3.9
     commands:
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t libindex
-      - pip install -r requirements.txt -t libsearch
+      - pip install -r requirements.txt -t uploadstory
+      - pip install -r requirements.txt -t getstory
+      - pip install -r requirements.txt -t getwrapped
+      - pip install -r requirements.txt -t imagegen
+      - pip install -r requirements.txt -t promptgen
+      - pip install -r requirements.txt -t updateprofile
   build:
     commands:
       - echo "Zipping deployment package..."
-      - cd libindex
-      - zip -r9 ../deployment_index.zip .
+      - cd uploadstory
+      - zip -r9 ../deployment_uploadstory.zip .
       - cd ..
-      - zip -g deployment_index.zip lambda_function_index.py
-      - cd libsearch
-      - zip -r9 ../deployment_search.zip .
+      - zip -g deployment_uploadstory.zip uploadstory.py
+      
+      
+
+      - cd getstory
+      - zip -r9 ../deployment_getstory.zip .
       - cd ..
-      - zip -g deployment_search.zip lambda_function_search.py
+      - zip -g deployment_getstory.zip getstory.py
+   
+
+      - cd getwrapped
+      - zip -r9 ../deployment_getwrapped.zip .
+      - cd ..
+      - zip -g deployment_getwrapped.zip getwrapped.py
+      
+
+      - cd imagegen
+      - zip -r9 ../deployment_imagegen.zip .
+      - cd ..
+      - zip -g deployment_imagegen.zip imagegen.py
+      
+
+      - cd updateprofile
+      - zip -r9 ../deployment_uploadstory.zip .
+      - cd ..
+      - zip -g deployment_updateprofile.zip updateprofile.py
+      
+
+      - cd promptgen
+      - zip -r9 ../deployment_promptgen.zip .
+      - cd ..
+      - zip -g deployment_promptgen.zip promptgen.py
+      
+      
   post_build:
     commands:
       - echo "Updating lambda Function..."
-      - aws lambda update-function-code --function-name lambda_function_index --zip-file fileb://deployment_index.zip 
-      - aws lambda update-function-code --function-name lambda_function_search --zip-file fileb://deployment_search.zip
+      - aws lambda update-function-code --function-name uploadstory --zip-file fileb://deployment_uploadstory.zip 
+      - aws lambda update-function-code --function-name getstory --zip-file fileb://deployment_getstory.zip
+      - aws lambda update-function-code --function-name promptgen --zip-file fileb://deployment_promptgen.zip
+      - aws lambda update-function-code --function-name getwrapped --zip-file fileb://deployment_getwrapped.zip
+      - aws lambda update-function-code --function-name imagegen --zip-file fileb://deployment_imagegen.zip
+      - aws lambda update-function-code --function-name updateprofile --zip-file fileb://deployment_updateprofile.zip
       - echo "DONE!!"
