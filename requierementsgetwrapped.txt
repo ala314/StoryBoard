@@ -1,3 +1,6 @@
+regex==2021.9.30
+matplotlib==3.5.1
+pandas==1.4.3
+Pillow==9.2.0
+wordcloud==1.8.1
 requests-aws4auth
-matplotlib
-wordcloud 
